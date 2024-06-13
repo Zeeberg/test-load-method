@@ -5,7 +5,10 @@
 $ cp env-example .env
 
 # 2.
-$ docker compose up
+$ docker compose up -d
+
+# 3. Дожидаемся записи 10 млн документов
+$ docker logs
 ```
 Api доступно по адресу http://localhost:3000
 
@@ -14,6 +17,9 @@ Api доступно по адресу http://localhost:3000
 Перед запуском команд нужно убедиться что проект запущен
 
 ```bash
+# Устанавливаем зависимости
+$ npm install
+
 # Тест без индекса
 $ npm run test:load
 

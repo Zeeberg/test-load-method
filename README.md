@@ -27,10 +27,8 @@ $ npm run test:load-index
 # 1.
 $ cp env-example .env
 
-```
-2. В файле .env изменить DATABASE_URL=mongodb://mongo:27017 на DATABASE_URL=mongodb://localhost:27017
+# 2. В файле .env изменить DATABASE_URL=mongodb://mongo:27017 на DATABASE_URL=mongodb://localhost:27017
 
-```bash
 # 3.
 $ docker compose -f docker-compose-dev.yaml up -d
 

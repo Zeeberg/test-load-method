@@ -32,7 +32,9 @@ export class DocumentSeedService {
       for (let i = 0; i < DOCUMENTS_TO_SAVE; i++) {
         const randomWord = faker.word.sample();
 
-        documentsToInsert.push(new this.model({ name: randomWord }));
+        documentsToInsert.push(
+          new this.model({ name: randomWord, name_indexed: randomWord }),
+        );
 
         if (documentsToInsert.length % CHUNK === 0) {
           const chunks = chunk<Model<DocumentSchemaClass>>(

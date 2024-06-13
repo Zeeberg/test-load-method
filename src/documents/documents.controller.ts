@@ -1,12 +1,12 @@
 import {
   Controller,
-  Param,
   Get,
   HttpStatus,
   HttpCode,
   Query,
+  ParseBoolPipe,
 } from '@nestjs/common';
-import { ApiTags, ApiOkResponse, ApiParam } from '@nestjs/swagger';
+import { ApiTags, ApiOkResponse } from '@nestjs/swagger';
 import { DocumentSchemaClass } from './entities/document.schema';
 import { DocumentsService } from './documents.service';
 
@@ -20,16 +20,11 @@ export class DocumentsController {
   @ApiOkResponse({
     type: DocumentSchemaClass,
   })
-  @Get('search/:search')
+  @Get('search')
   @HttpCode(HttpStatus.OK)
-  @ApiParam({
-    name: 'search',
-    type: String,
-    required: true,
-  })
   async searchDocument(
-    @Param('search') search: string,
-    @Query('indexed') indexed: boolean,
+    @Query('search') search: string,
+    @Query('indexed', ParseBoolPipe) indexed: boolean,
   ): Promise<DocumentSchemaClass[]> {
     return this.service.searchDocument({ search, indexed });
   }

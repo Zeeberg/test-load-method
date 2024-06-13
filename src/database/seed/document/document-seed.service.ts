@@ -20,7 +20,7 @@ export class DocumentSeedService {
 
     const started = Date.now();
 
-    const DOCUMENTS_TO_SAVE = 10_000_000;
+    const DOCUMENTS_TO_SAVE = 1_000_000;
     const CHUNK = 200_000;
     const PARALLEL_EXECUTION_CHUNK = 20_000;
 

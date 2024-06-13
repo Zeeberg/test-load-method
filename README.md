@@ -24,7 +24,7 @@ $ npm install
 $ npm run test:load
 
 # Тест с индексом
-$ npm run test:load-index
+$ npm run test:load-indexed
 
 ```
 ## Разработка

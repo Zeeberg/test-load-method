@@ -19,6 +19,13 @@ services:
       ME_CONFIG_BASICAUTH_USERNAME: ${DATABASE_USERNAME}
       ME_CONFIG_BASICAUTH_PASSWORD: ${DATABASE_PASSWORD}
       ME_CONFIG_MONGODB_URL: mongodb://${DATABASE_USERNAME}:${DATABASE_PASSWORD}@localhost:${DATABASE_PORT}/
+      
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - ${APP_PORT}:${APP_PORT}
 
 volumes:
   test-mongo-db:
